@@ -1,0 +1,108 @@
+@font-face {
+    font-family: "hackbot";
+    src: url("./HackbotFreeTrial-8MgA2.otf");
+}
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "hackbot", sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    padding: 4rem 4rem;
+    background-color: black;
+    color: white;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+}
+
+.reset-game {
+    padding: 1rem 2rem;
+    font-size: 2rem;
+}
+
+.tittle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.tittle h1 {
+    font-size: 4rem;
+}
+
+.logo-lone {
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: 8rem;
+}
+
+.line {
+    height: 0.5rem;
+    width: 100%;
+    background-color: white;
+}
+
+.box-number {
+    padding: 2rem 3rem;
+    background-color: white;
+    font-size: 2rem;
+    color: rgb(53, 53, 53);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.palying-part {
+    padding: 7rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.input-checker {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-checker-additive {
+    background-color: #000000;
+    padding: 3rem;
+    outline: none;
+    color: white;
+    font-size: 2rem;
+    border: 1px solid #fff;
+    margin-bottom: 4rem;
+}
+
+.check-number {
+    padding: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.guessing-part h3:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
+.guessing-part h3:first-child {
+    font-size: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgb(53, 53, 53);
+}
+
+.guessing-part h3:not(:first-child) {
+    font-size: 2rem;
+}
