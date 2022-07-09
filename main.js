@@ -8,6 +8,8 @@ let highScore = document.querySelector(".number-of-high-score");
 let resetButton = document.querySelector(".reset-game");
 let body = document.querySelector("body");
 
+let finalResult = document.querySelector(".result");
+
 let luckyNumber = Math.floor(Math.random() * 20) + 1;
 
 let scoreData = 20;
@@ -19,21 +21,26 @@ let checker;
 
 buttunClickerToCheck.addEventListener("click", function() {
     checker = document.querySelector(".input-checker-additive").value;
-
-    if (checker == luckyNumber) {
-        highScore.innerHTML = scoreData;
-        body.style.backgroundColor = "green";
-        childHood.innerText = "Correct guess";
-        luckyNumber = Math.floor(Math.random() * 20) + 1;
-        buttunClickerToCheck.disabled = true;
-    } else {
-        scoreData--;
-        Score.innerHTML = scoreData;
-        if (checker > luckyNumber) {
-            childHood.innerHTML = "Too high";
-        } else if (checker < luckyNumber) {
-            childHood.innerHTML = "Too low";
+    console.log(checker);
+    if (checker != "") {
+        if (checker == luckyNumber) {
+            highScore.innerHTML = scoreData;
+            body.style.backgroundColor = "green";
+            childHood.innerText = "Correct guess";
+            finalResult.innerText = `${luckyNumber}`;
+            luckyNumber = Math.floor(Math.random() * 20) + 1;
+            buttunClickerToCheck.disabled = true;
+        } else {
+            scoreData--;
+            Score.innerHTML = scoreData;
+            if (checker > luckyNumber) {
+                childHood.innerHTML = "Too high";
+            } else if (checker < luckyNumber) {
+                childHood.innerHTML = "Too low";
+            }
         }
+    } else {
+        childHood.innerHTML = "Please enter a number";
     }
 });
 
@@ -42,6 +49,7 @@ resetButton.addEventListener("click", function() {
     Score.innerHTML = scoreData;
     childHood.innerText = "";
     body.style.backgroundColor = "";
+    finalResult.innerText = "?";
 
     buttunClickerToCheck.disabled = false;
     checker = document.querySelector(".input-checker-additive").value = "";
