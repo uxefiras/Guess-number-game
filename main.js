@@ -1,17 +1,15 @@
 "use strict";
-
+//Selectors DOM elements
 let gusseingChecker = document.querySelector(".guessing-part");
-
 let buttunClickerToCheck = document.querySelector(".check-number");
 let Score = document.querySelector(".number-of-score");
 let highScore = document.querySelector(".number-of-high-score");
 let resetButton = document.querySelector(".reset-game");
 let body = document.querySelector("body");
-
 let finalResult = document.querySelector(".result");
 
+// Values for the game
 let luckyNumber = Math.floor(Math.random() * 20) + 1;
-
 let scoreData = 20;
 
 //Node ctreator
@@ -19,6 +17,7 @@ const node = document.createElement("h3");
 const childHood = gusseingChecker.appendChild(node);
 let checker;
 
+//Function to check the number
 buttunClickerToCheck.addEventListener("click", function() {
     checker = document.querySelector(".input-checker-additive").value;
     console.log(checker);
@@ -44,6 +43,7 @@ buttunClickerToCheck.addEventListener("click", function() {
     }
 });
 
+//Function to reset the game
 resetButton.addEventListener("click", function() {
     scoreData = 20;
     Score.innerHTML = scoreData;
